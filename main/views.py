@@ -11,9 +11,6 @@ def home(request):
     return render(request, 'main/home.html', context=context)
 
 
-def about(request):
-    return render(request, 'main/about.html')
-
 
 def contacts(request):
     if request.method == 'POST':
