@@ -1,41 +1,109 @@
 {% extends 'main/base.html' %}
+{% load static %}
 {% block content %}
 
 <body>
 
+<div class="row">
+    <div class="col-md-12">
+        <img src="{% static 'img/med_diag.jpg' %}" alt="med_diag" class="img-fluid">
+    </div>
 
-
-<header class="jumbotron jumbotron-fluid">
-    <div class="container text-center">
-        <h1 class="display-4">Компания медицинской диагностики</h1>
-        <p class="lead">Ваше здоровье в надежных руках</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Записаться на прием</a>
-
-        <a class="btn btn-danger btn-lg" href="#" role="button">Вызов врача на дом</a>
+</div>
+<header class="jumbotron jumbotron-fluid text-center bg-info text-white">
+    <div class="container">
+        <h1 class="display-4">Добро пожаловать в компанию медицинской диагностики</h1>
+        <p class="lead">Заботимся о вашем здоровье с любовью и профессионализмом</p>
+        <a class="btn btn-primary btn-lg mx-2" href="#" role="button">Записаться на прием</a>
+        <a class="btn btn-danger btn-lg mx-2" href="#" role="button">Вызвать врача на дом</a>
     </div>
 </header>
 
+<section class="container my-5">
+    <div class="text-center">
+        <a href="{% url 'services:category-list' %}" class="text-decoration-none text-dark">
+            <h2 class="mb-4">Наши услуги</h2>
+        </a>
+        <p>
+            Мы предоставляем широкий спектр медицинских услуг, охватывая все аспекты вашего здоровья.
+            Наши высококвалифицированные специалисты обеспечат вам точную диагностику и эффективное лечение.
+            Воспользуйтесь нашими услугами для поддержания здоровья в отличной форме.
+        </p>
+    </div>
+</section>
 
+<section class="container my-5">
+    <div class="text-center">
+        <a href="#" class="text-decoration-none text-dark">
+            <h2>Наша команда</h2>
+        </a>
+        <p>
+            В нашей команде работают врачи с многолетним опытом, готовые предоставить вам высококачественное
+            медицинское обслуживание. Мы гордимся своими профессионалами, которые посвятили свою жизнь
+            заботе о здоровье пациентов.
+        </p>
+    </div>
+</section>
 
 <section class="container my-5">
     <div class="container text-center">
-        <a href="{% url 'services:category-list' %}" class="text-decoration-none text-dark"><h2 class="mb-4">Наши услуги</h2></a>
-
+        <a href="{% url 'main:contacts' %}" class="text-decoration-none text-dark">
+            <h2>Свяжитесь с нами</h2>
+        </a>
+        <p>
+            Наши дружелюбные сотрудники готовы ответить на все ваши вопросы и предоставить необходимую информацию.
+            Мы заботимся о вашем удобстве, поэтому не стесняйтесь связаться с нами в любое время.
+        </p>
     </div>
 </section>
 
 
 <section class="container my-5">
     <div class="text-center">
-        <a href="#" class="text-decoration-none text-dark"><h2>Наша команда</h2></a>
+        <a href="#" class="text-decoration-none text-dark">
+            <h2>Наше оборудование</h2>
+        </a>
+        <p>
+            Мы используем современное и высокотехнологичное оборудование для точной диагностики и лечения.
+            Познакомьтесь с нашим медицинским оборудованием, способным обеспечить высший уровень заботы о вашем
+            здоровье.
+        </p>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{% static 'img/rentgen.png' %}" alt="рентген" class="img-fluid mb-3 rounded">
 
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'img/rentgen_3.png' %}" alt="кт" class="img-fluid mb-3 rounded">
+            </div>
+
+            <div class="col-md-4">
+                <img src="{% static 'img/kt.png' %}" alt="рентген" class="img-fluid mb-3 rounded">
+
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'img/img_2.jpg' %}" alt="рентген" class="img-fluid mb-3 rounded">
+
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'img/robo.jpg' %}" alt="рентген" class="img-fluid mb-3 rounded">
+
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'img/rentgen_2.jpg' %}" alt="рентген" class="img-fluid mb-3 rounded">
+
+            </div>
+        </div>
     </div>
 </section>
-
-
 <section class="container my-5">
-    <div class="container text-center">
-        <a href="{% url 'main:contacts' %}" class="text-decoration-none text-dark"><h2>Свяжитесь с нами</h2></a>
+    <div class="text-center">
+        <a href="{% url 'about_us:about_us_view' %}" class="text-decoration-none text-dark">
+            <h2>Отзывы клиентов</h2>
+        </a>
+        <p>
+            Узнайте, что говорят наши клиенты о качестве наших услуг. Ваши отзывы важны для нас!
+        </p>
     </div>
 </section>
 

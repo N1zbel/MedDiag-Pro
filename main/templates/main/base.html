@@ -1,3 +1,5 @@
+
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -22,9 +24,8 @@
             position: fixed;
             bottom: 0;
             width: 100%;
-
-            color: white; /* Цвет текста футера */
-            text-align: center;
+            left: 0;
+            color: black;
             padding: 10px;
         }
 
@@ -91,13 +92,14 @@
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col-lg-8 offset-lg-2">
+        <div class="col-lg-10 offset-lg-1">
             {% block content %}{% endblock %}
         </div>
     </div>
-</div>
 
-<footer class="text-light text-center py-3">
+
+<br><br><br>
+<footer class="text-black py-1">
     <p>&copy; {% now "Y" %} MedDiag Pro</p>
 </footer>
 
