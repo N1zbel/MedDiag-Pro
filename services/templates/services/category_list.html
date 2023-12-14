@@ -1,6 +1,19 @@
 {% extends "main/base.html" %}
-
+{% load static %}
 {% block content %}
+
+<script src="{% static '/js/bootstrap.bundle.min.js' %}"></script>
+<style>
+    body {
+        background-color: transparent !important;
+    }
+
+    .card {
+        background-color: transparent !important;
+    }
+
+</style>
+
   <div class="text-center">
     <h2>Наши центр предлагает следующие Категории услуг</h2>
   </div>
@@ -9,9 +22,8 @@
 
     {% for category in object_list %}
       <div class="col-4">
-        <div class="card mb-4 box-shadow">
-          <div class="card-header">
-            <i class="fas fa-heartbeat fa-4x mb-4"></i>
+        <div class="card-body text-center">
+          <div class="card-header " style="color: #800080;">
             <a href="{% url 'services:category-detail' pk=category.pk %}" class="text-decoration-none text-dark"><h4 class="card-title">{{ category.name }}</h4></a>
             <p class="card-text">{{ category.description }}</p>
           </div>

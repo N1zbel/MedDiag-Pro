@@ -1,6 +1,17 @@
 {% extends "main/base.html" %}
-
+{% load static %}
 {% block content %}
+<script src="{% static '/js/bootstrap.bundle.min.js' %}"></script>
+<style>
+    body {
+        background-color: transparent !important;
+    }
+
+    .card {
+        background-color: transparent !important;
+    }
+
+</style>
 <div class="text-center"> <h2>{{ object.name }}</h2></div>
 <div class="text-center"> <p>Услуги в этой категории:</p></div>
   <ul>

@@ -1,6 +1,17 @@
 {% extends "main/base.html" %}
-
+{% load static %}
 {% block content %}
+<script src="{% static '/js/bootstrap.bundle.min.js' %}"></script>
+<style>
+    body {
+        background-color: transparent !important;
+    }
+
+    .card {
+        background-color: transparent !important;
+    }
+
+</style>
 <section class="bg-light py-5">
     <div class="container text-center">
         <h2 class="mb-4">Наши центр предлагает следующие виды услуг по данной категории</h2>

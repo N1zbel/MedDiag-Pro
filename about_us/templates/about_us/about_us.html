@@ -4,6 +4,12 @@
 
 {% block content %}
 
+<style>
+    .center-text {
+        text-align: center;
+    }
+</style>
+
 <div class="row">
 
     <div class="col-md-12">
@@ -13,9 +19,9 @@
 </div>
 <div class="mt-10" style="color: #800080;">
     {% for review in reviews %}
-    <h2>
-        <p><strong> ({{ review.created_at }}) {{ review.author }}</strong>: {{ review.content }}</p>
-    </h2>
+    <h2 class="center-text">
+    <p><strong>({{ review.created_at }}) {{ review.author }}</strong>:<br> {{ review.content }}</p>
+</h2>
     {% endfor %}
 </div>
 <section class="container my-5">
