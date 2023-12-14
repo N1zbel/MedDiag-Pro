@@ -1,0 +1,22 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+<div class="text-center"> <h2>{{ object.name }}</h2></div>
+<div class="text-center"> <p>Услуги в этой категории:</p></div>
+  <ul>
+    {% for service in object.service_set.all %}
+    <div class="col mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-heartbeat fa-4x mb-4"></i>
+                        <a href="#" class="text-decoration-none text-dark "><h4 class="card-title" >{{ service.name }}</h4></a>
+                      <p class="card-text"> <h3>Стоимость услуги - {{service.price}} руб.</h3> </p>
+                       <a class="btn btn-success" href="{% url 'services:service-detail' pk=service.pk %}">Ознакомиться</a>
+
+                    </div>
+                </div>
+            </div>
+
+    {% endfor %}
+  </ul>
+{% endblock %}

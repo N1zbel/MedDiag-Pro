@@ -1,0 +1,24 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+<section class="bg-light py-5">
+    <div class="container text-center">
+        <h2 class="mb-4">Наши центр предлагает следующие виды услуг по данной категории</h2>
+        <div class="row">
+
+            {% for service in object_list %}
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <i class="fas fa-heartbeat fa-4x mb-4"></i>
+                            <a href="#" class="text-decoration-none text-dark"><h4 class="card-title">{{ service.name }}</h4></a>
+                            <p class="card-text">{{ service.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+{% endblock %}

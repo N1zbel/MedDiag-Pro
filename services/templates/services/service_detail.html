@@ -1,0 +1,18 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+<div class="container bg-white my-4 p-4">
+    <div class="text-center">
+        <h2>{{ object.name }}</h2>
+    </div>
+    <div class="text-center mt-4">
+        <p>{{ object.description }}</p>
+        <br><br>
+        <p class="card-text"> <h3>Стоимость услуги - {{object.price}} руб.</h3> </p>
+        <br><br>
+        <a class="btn btn-success btn-lg" href="#">Заказать услугу</a>
+        <br><br>
+        <a class="btn btn-primary btn-lg" href="{% url 'services:category-list' %}">К Услугам</a>
+    </div>
+</div>
+{% endblock %}
