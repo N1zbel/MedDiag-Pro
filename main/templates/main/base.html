@@ -5,35 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Компания медицинской диагностики{% endblock %}</title>
-    <!-- Подключение Bootstrap (вам может потребоваться установить и скачать Bootstrap) -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
- <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #6b6e9e 0%, #b49295 100%);
-            font-family: 'Arial', sans-serif;
+
+    <style>
+
+        body {
+            background-color: #f0f0f0;
+            background-image: url('/static/img/logo.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
         }
+
+
+
+
         footer {
             position: fixed;
             bottom: 0;
             width: 100%;
-            background-color: #87CEFA;
+
             color: white; /* Цвет текста футера */
             text-align: center;
             padding: 10px;
         }
 
+
     </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 </head>
 <body>
 
-<!-- Навигационная панель -->
+
 <nav class="navbar navbar-expand-lg navbar-light ">
     <a class="navbar-brand" href="{% url 'main:home' %}"> MedDiag Pro</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -45,10 +51,21 @@
                 <a class="nav-link" href="{% url 'main:about' %}">О нас</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'main:services' %}">Услуги</a>
+                <a class="nav-link" href="{% url 'services:category-list' %}">Услуги</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#team">Наша команда</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Наша команда
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Главный врач</a>
+                    <a class="dropdown-item" href="#">Заведующие Отделением</a>
+                    <a class="dropdown-item" href="#">Врач-кардиолог</a>
+                    <a class="dropdown-item" href="#">Врач-рентгенолог</a>
+                    <a class="dropdown-item" href="#">Лаборанты</a>
+                    <a class="dropdown-item" href="#">Медсестры </a>
+                </div>
             </li>
 
             <li class="nav-item">
@@ -56,7 +73,7 @@
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
-               <a class="nav-link" href="{% url 'users:profile' %}"> {{ user.email }} </a>
+                <a class="nav-link" href="{% url 'users:profile' %}"> Личный кабинет </a>
             </li>
             {% else %}
             <li class="nav-item">
@@ -71,7 +88,7 @@
     </div>
 </nav>
 
-<!-- Основной контент -->
+
 <div class="container mt-5">
     <div class="row">
         <div class="col-lg-8 offset-lg-2">
@@ -80,10 +97,10 @@
     </div>
 </div>
 
-<footer class="bg-dark text-light text-center py-3">
+<footer class="text-light text-center py-3">
     <p>&copy; {% now "Y" %} MedDiag Pro</p>
 </footer>
-<!-- Подключение Bootstrap JS (вам может потребоваться установить и скачать Bootstrap JS) -->
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -1,0 +1,45 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<body>
+
+
+
+<header class="jumbotron jumbotron-fluid">
+    <div class="container text-center">
+        <h1 class="display-4">Компания медицинской диагностики</h1>
+        <p class="lead">Ваше здоровье в надежных руках</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Записаться на прием</a>
+
+        <a class="btn btn-danger btn-lg" href="#" role="button">Вызов врача на дом</a>
+    </div>
+</header>
+
+
+
+<section class="container my-5">
+    <div class="container text-center">
+        <a href="{% url 'services:category-list' %}" class="text-decoration-none text-dark"><h2 class="mb-4">Наши услуги</h2></a>
+
+    </div>
+</section>
+
+
+<section class="container my-5">
+    <div class="text-center">
+        <a href="#" class="text-decoration-none text-dark"><h2>Наша команда</h2></a>
+
+    </div>
+</section>
+
+
+<section class="container my-5">
+    <div class="container text-center">
+        <a href="{% url 'main:contacts' %}" class="text-decoration-none text-dark"><h2>Свяжитесь с нами</h2></a>
+    </div>
+</section>
+
+
+</body>
+</html>
+{% endblock %}
