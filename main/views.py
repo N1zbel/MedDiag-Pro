@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import json
 from django.http import JsonResponse
+
+from main.models import Contact
 from services.models import Service, ServiceCategory
 
 
@@ -11,13 +13,16 @@ def home(request):
     return render(request, 'main/home.html', context=context)
 
 
-
 def contacts(request):
     if request.method == 'POST':
         name = request.POST.get('name')
         phone = request.POST.get('phone')
         message = request.POST.get('message')
-        print(f'{name}, {phone}, {message}')
+
+        contact_message = Contact.objects.create(name=name, phone=phone, message=message)
+
+        return redirect('/')
+
     context = {
         'title': 'Контакты'
     }
